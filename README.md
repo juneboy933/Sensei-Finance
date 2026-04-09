@@ -90,6 +90,22 @@ MPESA_CALLBACK_URL=https://your-server.com/api/mpesa/callback
   }
   ```
 
+### Transfer Funds
+
+- URL: `POST /api/business/transfer`
+- Headers:
+  - `Authorization: Bearer <token>`
+  - `Content-Type: application/json`
+- Body:
+  ```json
+  {
+    "senderAccountId": "your-sender-account-uuid",
+    "receiverAccountId": "receiver-account-uuid",
+    "amount": 200,
+    "description": "Payment for services"
+  }
+  ```
+
 ## Notes
 
 - The app uses PostgreSQL and requires a running database instance.
