@@ -58,6 +58,38 @@ MPESA_CALLBACK_URL=https://your-server.com/api/mpesa/callback
 - `POST /api/user/login` - login and receive JWT token
 - `POST /api/mpesa/callback` - receive M-Pesa callback events
 
+## Example Requests
+
+### Deposit (STK Push)
+
+- URL: `POST /api/business/deposit`
+- Headers:
+  - `Authorization: Bearer <token>`
+  - `Content-Type: application/json`
+- Body:
+  ```json
+  {
+    "phoneNumber": "254712345678",
+    "amount": 1000,
+    "accountId": "your-account-uuid"
+  }
+  ```
+
+### Withdrawal (B2C Payment)
+
+- URL: `POST /api/business/withdraw`
+- Headers:
+  - `Authorization: Bearer <token>`
+  - `Content-Type: application/json`
+- Body:
+  ```json
+  {
+    "phoneNumber": "254712345678",
+    "amount": 500,
+    "accountId": "your-account-uuid"
+  }
+  ```
+
 ## Notes
 
 - The app uses PostgreSQL and requires a running database instance.
